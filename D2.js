@@ -23,3 +23,25 @@ function reminder(x,y){
 }
 
 console.log('The reminder is',reminder(35,6))
+
+function comparison() {
+    const x = 5;
+    const y = 5;
+
+    // Comparison operators
+    console.log(x == y);    
+    console.log(x === y);   
+    console.log(x != y);    
+    console.log(x !== y);   
+    console.log(x > y);     
+    console.log(x >= y);    
+    console.log(x < y);     
+    console.log(x <= y);    
+
+    // Logical operators
+    console.log(x < y && x > 0);  
+    console.log(x < y || x < 0);  
+    console.log(!(x < y));        
+}
+
+comparison();
