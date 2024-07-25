@@ -16,17 +16,39 @@ errorChecker()
 function divider(a,b) {
     try {
         if (b==0) {
-            throw new Error(`${b} is 0 so it cant devide`)
+            throw new Error(`${b} cantbe used as denominator`)
         }
         console.log(b, 'is zero')
     } catch (error) {
-        console.log("Trying to divide by zero")
+        console.log("You are trying to divide by zero")
     }
     finally{
-        console.log("please remember that");
+        console.log("Attempting to divide by zero");
     }
 }
 divider(5,0)
 
-//Using fetch api and handeling it 
+class customError extends Error{
+    constructor(message, code){
+        super(message)
+        this.name= this.constructor.name;
+        this.code= code;
+    }
+}
+function throwInstance(){
+    let success = false;
+    if (!success){
+        throw new customError("Instance error: " )
+    }
+}
 
+try {
+    console.log(throwInstance());
+} catch (error) {
+    if (error instanceof CustomError) {
+        console.log(error.message)
+    }
+    else{
+        console.error("Unexpected error: " + error)
+    }
+}
