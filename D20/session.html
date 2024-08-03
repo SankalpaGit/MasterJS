@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML form -->
+<form id="sessionUserForm">
+    <input type="text" id="sessionName" placeholder="Name" required>
+    <input type="email" id="sessionEmail" placeholder="Email" required>
+    <button type="submit">OK</button>
+  </form>
+  <div id="sessionDisplayData"></div>
+  
+  <script>
+  // JavaScript for handling form submission and displaying data
+  document.getElementById('sessionUserForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let name = document.getElementById('sessionName').value;
+    let email = document.getElementById('sessionEmail').value;
+    sessionStorage.setItem('sessionUserData', JSON.stringify({ name, email }));
+    displaySessionData();
+  });
+  
+  function displaySessionData() {
+    let sessionUserData = JSON.parse(sessionStorage.getItem('sessionUserData'));
+    if (sessionUserData) {
+      document.getElementById('sessionDisplayData').innerText = `Name: ${sessionUserData.name}, Email: ${sessionUserData.email}`;
+    }
+  }
+  
+  // Display data on page load
+  window.onload = displaySessionData;
+  </script>
+  
+</body>
+</html>

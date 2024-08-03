@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML form -->
+<form id="userForm">
+    <input type="text" id="name" placeholder="Name" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <button type="submit">Save</button>
+  </form>
+  <div id="displayData"></div>
+  
+  <script>
+  // JavaScript for handling form submission and displaying data
+  document.getElementById('userForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    localStorage.setItem('userData', JSON.stringify({ name, email }));
+    displayData();
+    deleteData();
+  });
+  
+  function displayData() {
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    if (userData) {
+      document.getElementById('displayData').innerText = `Name: ${userData.name}, Email: ${userData.email}`;
+    }
+  }
+  function deleteData(){
+    let userData = JSON.parse(localStorage.getItem('userData'));
+    localStorage.removeItem('userData')
+  }
+  
+  // Display data on page load
+  window.onload = displayData;
+  </script>
+   <script>
+    // JavaScript for handling form submission and displaying data
+    document.getElementById('sessionUserForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      let name = document.getElementById('sessionName').value;
+      let email = document.getElementById('sessionEmail').value;
+      sessionStorage.setItem('sessionUserData', JSON.stringify({ name, email }));
+      displaySessionData();
+    });
+    
+    function displaySessionData() {
+      let sessionUserData = JSON.parse(sessionStorage.getItem('sessionUserData'));
+      if (sessionUserData) {
+        document.getElementById('sessionDisplayData').innerText = `Name: ${sessionUserData.name}, Email: ${sessionUserData.email}`;
+      }
+    }
+    
+    // Display data on page load
+    window.onload = displaySessionData;
+    </script>
+</body>
+</html>
