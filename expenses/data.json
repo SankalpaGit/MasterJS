@@ -1,0 +1,33 @@
+{
+  "hello@gmail.com": {
+    "password": "$2a$10$UkY3qHUBoOtnGkGql773.uxlO2Af87VW1DhEoY1GA6EGx1hjTxivO",
+    "budget": 300000,
+    "expenses": [
+      {
+        "description": "spending in pizza",
+        "amount": 1000,
+        "category": "personal",
+        "date": "2024-08-06T12:04:45.533Z"
+      },
+      {
+        "description": "travelling to dharan",
+        "amount": 12000,
+        "category": "personal",
+        "date": "2024-08-06T12:05:12.702Z"
+      },
+      {
+        "description": "payment pick travel",
+        "amount": 200,
+        "category": "professional",
+        "date": "2024-08-06T12:15:25.368Z"
+      },
+      {
+        "description": "promotion party",
+        "amount": 20000,
+        "category": "professional",
+        "date": "2024-08-06T12:15:47.351Z"
+      }
+    ],
+    "income": []
+  }
+}

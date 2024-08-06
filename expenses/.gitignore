@@ -1,0 +1,8 @@
+# Node modules
+node_modules/
+
+# files
+report.txt
+
+# Package lock file
+package-lock.json
